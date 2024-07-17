@@ -1,0 +1,12 @@
+{
+    "https://pub.current.posit.team": {
+        "server_url": "https://pub.current.posit.team",
+        "filename": "/home/david/superzip/python",
+        "app_url": "https://pub.current.posit.team/content/8351476f-2028-4f13-9f53-0134d230d766/",
+        "app_id": "8",
+        "app_guid": "8351476f-2028-4f13-9f53-0134d230d766",
+        "title": "python",
+        "app_mode": "python-shiny",
+        "app_store_version": 1
+    }
+}
