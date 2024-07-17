@@ -17,7 +17,7 @@ jobs:
         uses: rstudio/actions/connect-publish@main
         with:
           url: https://${{ secrets.CONNECT_API_KEY }}@pub.current.posit.team
-          namespace: python-examples
+          namespace: superzip
           dir: |
             ./r/
             ./python/
