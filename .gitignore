@@ -1,2 +1,5 @@
 __pycache__
 .Rproj.user
+.venv/
+rsconnect/
+rsconnect-python/

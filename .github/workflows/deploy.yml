@@ -8,18 +8,26 @@ on:
 
 jobs:
   deploy:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - subdir: r
+            guid: 335c9bc5-eafa-4464-a4f4-e9aa40486c4a
+          - subdir: python
+            guid: 2c1128e6-2ba7-48af-98a0-0737e25b3736
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
-      - name: deploy
-        uses: rstudio/actions/connect-publish@main
+
+      - name: install python
+        uses: actions/setup-python@v5
         with:
-          url: https://${{ secrets.CONNECT_API_KEY }}@pub.current.posit.team
-          namespace: superzip
-          dir: |
-            ./r/
-            ./python/
-          require-vanity-path: true
-          access-type: all
+          python-version: "3.11"
+
+      - name: Install CLI
+        run: python -m pip install rsconnect-python
+
+      - name: Deploy
+        run: rsconnect deploy manifest ${{ matrix.subdir }}/manifest.json --server ${{ secrets.CONNECT_SERVER }} --key ${{ secrets.CONNECT_API_KEY }} --app-id ${{ matrix.guid }}
