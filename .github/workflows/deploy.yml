@@ -31,9 +31,9 @@ jobs:
 
       - name: Deploy
         run: >
-          rsconnect deploy manifest ${{ matrix.subdir }}/manifest.json \
-          --server ${{ secrets.CONNECT_SERVER }} \ 
-          --api-key ${{ secrets.CONNECT_API_KEY }} \
-          --app-id ${{ matrix.guid }} \
-          --title superzip-${{ matrix.subdir }}-fromActions \
-          --no-verify
+          rsconnect deploy manifest ${{ matrix.subdir }}/manifest.json 
+          --server ${{ secrets.CONNECT_SERVER }} 
+          --api-key ${{ secrets.CONNECT_API_KEY }} 
+          --app-id ${{ matrix.guid }} 
+          --title superzip-${{ matrix.subdir }}-fromActions 
+          --no-verify 
