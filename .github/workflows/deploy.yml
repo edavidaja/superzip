@@ -30,7 +30,7 @@ jobs:
         run: python -m pip install rsconnect-python
 
       - name: Deploy
-        run: |
+        run: >
           rsconnect deploy manifest ${{ matrix.subdir }}/manifest.json \
           --server ${{ secrets.CONNECT_SERVER }} \ 
           --api-key ${{ secrets.CONNECT_API_KEY }} \
