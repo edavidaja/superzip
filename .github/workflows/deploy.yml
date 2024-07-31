@@ -30,4 +30,10 @@ jobs:
         run: python -m pip install rsconnect-python
 
       - name: Deploy
-        run: rsconnect deploy manifest ${{ matrix.subdir }}/manifest.json --server ${{ secrets.CONNECT_SERVER }} --api-key ${{ secrets.CONNECT_API_KEY }} --app-id ${{ matrix.guid }} --no-verify
+        run: |
+          rsconnect deploy manifest ${{ matrix.subdir }}/manifest.json \
+          --server ${{ secrets.CONNECT_SERVER }} \ 
+          --api-key ${{ secrets.CONNECT_API_KEY }} \
+          --app-id ${{ matrix.guid }} \
+          --title superzip-${{ matrix.subdir }}-fromActions \
+          --no-verify
