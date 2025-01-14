@@ -28,6 +28,7 @@ def create_map(**kwargs):
     map.add(search)
     return map
 
+
 def density_plot(
     overall: pd.DataFrame,
     in_bounds: pd.DataFrame,
@@ -68,7 +69,7 @@ def density_plot(
             showticklabels=False,
             zeroline=False,
         ),
-        template="plotly_white"
+        template="plotly_white",
     )
     # hovermode itsn't working properly when dynamically, absolutely positioned
     for _, trace in enumerate(fig.data):
@@ -93,6 +94,7 @@ def density_plot(
 
 color_palette = plt.get_cmap("viridis", 10)
 
+
 # TODO: how to handle nas (pd.isna)?
 def col_numeric(domain: Tuple[float, float], na_color: str = "#808080"):
     rescale = mpl.colors.Normalize(domain[0], domain[1])
@@ -106,14 +108,14 @@ def col_numeric(domain: Tuple[float, float], na_color: str = "#808080"):
 
 # R> cat(paste0(round(scales::rescale(log10(1:10), to = c(0.05, 1)), 2), ": '", viridis::viridis(10), "'"), sep = "\n")
 heatmap_gradient = {
-    0.05: "#440154",
-    0.34: "#482878",
-    0.5: "#3E4A89",
-    0.62: "#31688E",
-    0.71: "#26828E",
-    0.79: "#1F9E89",
-    0.85: "#35B779",
-    0.91: "#6DCD59",
-    0.96: "#B4DE2C",
-    1: "#FDE725",
+    0.05: "#00204DFF",
+    0.34: "#00336FFF",
+    0.5: "#39486BFF",
+    0.62: "#575C6DFF",
+    0.71: "#707173FF",
+    0.79: "#8A8779FF",
+    0.85: "#A69D75FF",
+    0.91: "#C4B56CFF",
+    0.96: "#E4CF5BFF",
+    1: "#FFEA46FF",
 }
