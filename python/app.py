@@ -81,7 +81,7 @@ app_ui = ui.page_navbar(
             "Superzip explorer",
             icon_svg("circle-info").add_class("ms-2"),
         ],
-        ui.markdown("'Super Zips' is a term [coined by Charles Murray](https://www.amazon.com/Coming-Apart-State-America-1960-2010/dp/030745343X) to describe the most prosperous, highly educated demographic clusters"),
+        ui.markdown("'Super Zips' describes the most prosperous, highly educated demographic clusters"),
         placement="right",
     ),
     window_title="Superzip explorer"
